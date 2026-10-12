@@ -1,0 +1,30 @@
+name: 'PR Risk Radar'
+description: 'Score a pull request 0–100 across risk dimensions and comment a verdict — risky SQL, secrets, deps, infra, diff size.'
+author: 'Ivo Setyadi'
+branding:
+  icon: 'radio'
+  color: 'orange'
+
+inputs:
+  comment:
+    description: 'Post the risk verdict as a PR comment (true/false).'
+    required: false
+    default: 'true'
+  fail-above:
+    description: 'Fail the check if the score is at or above this value (0–100). Default: never fail.'
+    required: false
+    default: '101'
+  token:
+    description: 'GitHub token used to read PR files and post comments.'
+    required: false
+    default: ${{ github.token }}
+
+outputs:
+  score:
+    description: 'The computed risk score (0–100).'
+  band:
+    description: 'Risk band: Low | Medium | High | Critical.'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

@@ -1,0 +1,13 @@
+{
+  "name": "pr-risk-radar",
+  "version": "0.1.0",
+  "description": "Score a pull request 0-100 across risk dimensions and comment a verdict — risky SQL, secrets, deps, infra, diff size.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "node test/run.js"
+  },
+  "keywords": ["github-action", "code-review", "risk", "ci", "pull-request", "devsecops"],
+  "author": "Ivo Setyadi",
+  "license": "MIT",
+  "homepage": "https://ivosetyadi.github.io"
+}
